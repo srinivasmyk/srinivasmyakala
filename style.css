@@ -1,0 +1,201 @@
+/* Reset and base styles */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  background: #f8f9fb;
+  color: #222;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* NAVIGATION */
+nav {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+}
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  color: #2254f4;
+}
+.nav-links {
+  list-style: none; display: flex; gap: 25px;
+}
+.nav-links a {
+  color: #333; text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #2254f4; }
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, #e3eefd 0%, #fff 70%);
+  padding: 70px 0 40px 0;
+}
+.header-container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-content { flex: 2; }
+.header-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4em;
+  margin-bottom: 20px;
+}
+.header-content h1 span {
+  color: #2254f4;
+}
+.header-content p {
+  font-size: 1.15em;
+  margin-bottom: 25px;
+  color: #333;
+}
+.header-img {
+  flex: 1;
+  text-align: right;
+}
+.header-img img {
+  width: 200px; height: 200px; border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff; box-shadow: 0 4px 14px rgba(34, 84, 244, 0.13);
+}
+
+.btn {
+  background: #2254f4;
+  color: #fff;
+  padding: 13px 30px;
+  border: none; border-radius: 25px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover { background: #1035af; transform: translateY(-2px); }
+
+/* SECTIONS */
+section { padding: 55px 0; }
+section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #2254f4;
+}
+
+#about p {
+  font-size: 1.13em;
+  line-height: 1.7;
+  color: #222;
+  max-width: 700px;
+}
+.services-list {
+  display: flex; gap: 30px; flex-wrap: wrap;
+}
+.service {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 12px rgba(34,84,244,0.06);
+  flex: 1 1 220px;
+  min-width: 230px;
+  margin-bottom: 16px;
+}
+.service h3 {
+  color: #2254f4;
+  margin-bottom: 10px;
+  font-size: 1.17em;
+}
+.service p { color: #3c3c3c; font-size: 1em; }
+
+.testimonials-list {
+  display: flex; gap: 30px; flex-wrap: wrap;
+}
+.testimonial {
+  background: #f5faff;
+  border-left: 5px solid #2254f4;
+  padding: 22px 25px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  flex: 1 1 200px;
+  min-width: 250px;
+}
+.testimonial p {
+  font-style: italic;
+  font-size: 1.07em;
+}
+.testimonial span {
+  display: block; margin-top: 12px;
+  color: #777; font-size: 0.98em;
+}
+
+/* CONTACT FORM */
+.contact-container {
+  max-width: 500px; margin: auto;
+}
+form {
+  display: flex; flex-direction: column; gap: 17px;
+}
+input, textarea {
+  padding: 13px 15px;
+  border-radius: 8px;
+  border: 1px solid #c9d2e0;
+  font-size: 1em;
+}
+textarea { min-height: 90px; resize: vertical; }
+input:focus, textarea:focus { outline: 2px solid #2254f4; }
+
+#form-success {
+  color: #2254f4;
+  margin-top: 10px; font-size: 1.05em;
+}
+.hidden { display: none; }
+
+/* FOOTER */
+footer {
+  background: #2254f4; color: #fff;
+  text-align: center; padding: 20px 0;
+  font-size: 1em; margin-top: 48px;
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 900px) {
+  .header-container {
+    flex-direction: column-reverse; text-align: center;
+  }
+  .header-img {
+    margin-bottom: 22px; text-align: center;
+  }
+  .services-list, .testimonials-list {
+    flex-direction: column; gap: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container { width: 98%; }
+  .header-img img { width: 140px; height: 140px; }
+  .service, .testimonial { min-width: unset; }
+  nav .nav-links { gap: 12px; font-size: 0.97em; }
+}
